@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LSHTM Med Stats MSc
+% Project Template
+% Instructions:
+% - Compile only main.tex (this file)
+% - Make formating choices here
+% - Put content in seperate .tex files and input them here
+% - See chapter02.tex for examples of things
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[11pt,a4paper,twoside,openany]{book}
+% twoside: slight warning if printed will give unequal margins to allow for binding
+% can be adjusted if needed; openany can be changed to open right if you want chapters
+% to start on the right
+
+% Core Formating Packages:
+\usepackage{array,       % Lets you adjust table spacing
+            ragged2e,    % For some layout issues 
+            graphicx,    % 
+            amsmath,     % 
+            geometry,    % Page layout/Margins
+            setspace,    % 1.5 spacing
+            fancyhdr,    % Header editing
+            hyperref,    % Allows links
+            %indentfirst, % Uncomment for 1st para indentation
+            titlesec     % Formating of chapter titles
+            }
+
+%%%% ADDITIONAL PACKAGES: %%%%          
+\usepackage{helvet}
+% Arial is the recommended font for MSc projects at LSHTM (bleh)
+\renewcommand{\familydefault}{\sfdefault} % Sets default font to helvetica
+% Arial is recommended font, Helvetica is almost identical
+% If you must use Arial can use it with fontspec pkg and
+% XeLatex (bleh).
+
+\usepackage[justification=justified,   % Justifies captions
+            singlelinecheck=false,     % Multiline captions with //
+            labelsep=period,           % . sep, ex: Figure 1. instead of Figure 1:
+            labelfont=bf]{caption}     % Bold figure/table title
+
+\usepackage[backend=bibtex]{biblatex}
+\bibliography{references.bib} % Your Bibtex file goes here
+% Depending on what program you use to compile, you may
+% want to remove the [backend=bibtex]
+
+%%%% FORMATTING: %%%%
+% Header:
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO]{\footnotesize\rightmark}   % Section title on right, odd pages
+\fancyhead[LE]{\footnotesize\leftmark}    % Chapter Title on left, even pages
+\fancyfoot[CE,CO]{\thepage}               % Centered page # in footer
+\renewcommand{\headrulewidth}{0.0pt}      % Line below header
+\renewcommand{\footrulewidth}{0.0pt}      % Line above footer
+
+% Link & Metadata:
+\hypersetup{
+  colorlinks = true,
+  urlcolor = black,    % External Links, default: blue                
+  linkcolor = black,   % Internal Links, default: red  
+  citecolor= black,    % citations, deafault: lime green  (?)
+  pdfauthor = {},      % Don't put your name or it will show up in metadata
+  pdfkeywords = {},
+  pdftitle = {MSc Project Report},
+  pdfsubject = {},
+  pdfpagemode = UseNone
+}
+ 
+% Path for Images:
+\graphicspath{{figures/}}  
+
+% Margins:
+\geometry{
+  left=1in, right=1in,
+  top=1in, bottom=1in,
+  head=0.5in, foot=0.5in
+}
+
+% Chapter Title Formating w/ titlesec pkg:
+\titleformat{\chapter}{\normalfont\huge}{\thechapter.}{20pt}{\huge\bf\scshape}
+% scshape: Big/Small Caps
+% Removes "Chapter X" titles in header & before text:
+\renewcommand{\chaptername}{}
+
+% Prevents latex from vertically trying to 
+% fill pages with ragged2e command:
+\raggedbottom
+
+%%%% Other options you may want %%%%
+% Used to change table horzontal spacing:
+% \renewcommand{\arraystretch}{1.0}
+% Table vertical spacing:
+ {\setlength{\extrarowheight}{1pt}
+% Used to change default indent spacing:
+% \setlength{\parindent}{2em}
+% Spacing between paragraphs:
+% \setlength{\parskip}{0em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%% Front Matter %%%%
+\frontmatter
+
+\input{sections/title}  % Title Page
+
+\onehalfspacing         % 1.5 Spacing, for double: \doublespacing
+  \input{sections/acknowledgements}
+\newpage                % Seperate ack & abstract
+  \input{sections/abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+%%%% Main Matter %%%%
+
+\mainmatter
+  \input{sections/introduction}
+  \input{sections/chapter02}
+  \input{sections/chapter03}
+  \input{sections/chapter04}
+  \input{sections/conclusion}
+
+%%%% Back Matter %%%%
+
+\backmatter
+\printbibliography[title = {References}]
+\addcontentsline{toc}{chapter}{References}
+\appendix
+\input{sections/appendix}
+
+\end{document}

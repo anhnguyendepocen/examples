@@ -1,0 +1,44 @@
+\chapter{Which Ice Cream is the Best?}
+
+\section{Clearly Rocky Road}
+In this paragraph we will discuss the eternal debate surrounding the suppremacy of Rocky Road as the best icream flavor. \\
+
+Who doesn't love how the creamy chocolate ice cream contrasts with both the marshmellows and almonds. \footnote{My coffee this morning is pretty terrible so I am not responsible for anything written here.}
+
+\subsection{What is the ideal ratio of marshmellows to almonds?}
+
+\newpage
+
+This new page demonstrates the header. Look up there! \\
+
+But while we are here, lets again mention that Rocky Road is the best flavor of icecream. Here is a citation that has nothing to do with ice cream: \cite{Yman2016}
+
+\newpage
+
+Hey look at the header on an opposite page. Look up! The indentations on this page are a little odd looking because we manually broke the pages up. Don't do that. \\
+
+Coffee, Mint Chip, Napolean \& Pistachio are also good flavors. Look at the pretty pic in \ref{fig:logo}
+
+\begin{figure} 
+  \includegraphics[width=0.50\textwidth]{schoolseal.jpg} % Can adjust size <-
+  \caption{This is the logo of the London School of Hygiene \& Medicine}
+  \caption*{It has nothing to do with ice cream (sadly, am I right?). 
+            This part of the caption won't show up in the TOC because of the *
+            }
+% If you want caption above, simply put it above "\includegraphics"
+  \label{fig:logo}
+\end{figure}
+
+\begin{table}[bth] % [bth] Tells LaTeX we want the table at the bottom (b) if possible
+                   % if not then the top (t) is next best, lastly here (h)
+                   % if you put [h] alone, then God smites a puppy. Lastly [p] will put the 
+                   % on a special page for just figures.
+\small             % lets make our table small!
+\caption{The best ice cream toppings ranked.}
+\begin{tabular}{|lcc|} \firsthline  % The | lines here tell Latex we want vertical lines there
+ Rank & Topping & Qualities \\ \cline{1-3}
+ 1 (the best) & Rainbow Sprinkles & They are amazing. Really there is nothing better. \\
+ 2-500 & Everything Else & Never as good as rainbow sprinkles. \\ \hline
+\end{tabular}
+\end{table}
+
