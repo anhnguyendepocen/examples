@@ -1,0 +1,86 @@
+---
+classoption: a4paper, oneside
+documentclass: book
+fontsize: 11pt
+geometry: margin=1in
+linestrech: 1.5
+linkcolor: black
+citecolor: black
+urlcolor: black
+toccolor: black
+bibliography: references.bib
+subparagraph: TRUE
+mainfont: Arial
+output:
+  pdf_document:
+    latex_engine: xelatex
+    fig_caption: yes
+    number_sections: yes
+header-includes:
+- \usepackage{array, amsmath, titlesec, fancyhdr, pageslts}
+- \usepackage[justification=justified, singlelinecheck=false, labelsep=period, labelfont=bf]{caption}
+- \renewcommand{\arraystretch}{1.0}
+- \setlength{\extrarowheight}{1pt}
+- \titleformat{\chapter}{\normalfont\huge}{\thechapter.}{20pt}{\huge\bf}
+- \renewcommand{\chaptername}{}
+- \let\origappendix\appendix
+- \renewcommand\appendix{\clearpage\pagenumbering{roman}\origappendix}
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'figures/', echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+\frontmatter
+
+```{r child = 'sections/title.Rmd'}
+```
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[CE,CO]{\thepage}
+\renewcommand{\headrulewidth}{0.0pt}
+
+```{r child = 'sections/acknowledgements.Rmd'}
+```
+
+\newpage
+
+```{r child = 'sections/abstract.Rmd'}
+```
+
+\newpage
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+\newpage
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\newpage
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\mainmatter
+\fancyhead[R]{\footnotesize\leftmark}
+\newpage
+```{r child = 'sections/introduction.Rmd'}
+```
+
+\newpage
+```{r child = 'sections/chapter02.Rmd'}
+```
+
+\newpage
+```{r child = 'sections/chapter03.Rmd'}
+```
+
+\newpage
+
+\appendix
+```{r child = 'sections/appendix.Rmd'}
+```
+
+\backmatter
+
+# References

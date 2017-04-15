@@ -1,0 +1,6 @@
+---
+output: pdf_document
+---
+
+\chapter*{Appendix}
+\addcontentsline{toc}{chapter}{Appendix}

@@ -1,0 +1,37 @@
+---
+output: pdf_document
+---
+
+\begin{titlepage}
+
+  \begin{flushright}
+   \includegraphics[width=0.3\textwidth]{figures/schoolseal.jpg}
+  \end{flushright}
+  
+  \begin{center}
+    \LARGE
+        MSc Project Report \\
+        2017--2018
+    \vspace*{1cm}
+        
+    \Huge
+        \textbf{Title of the Report}
+    \vspace{2.5cm}
+        
+    \LARGE
+        \textbf{Candidate Number:} 12345678 \\
+        \textbf{Supervisor:} Dr. Supervisor \\
+    \vspace{0.5cm}
+    \large
+        Page Count: \lastpageref{pagesLTS.arabic} (Introduction to Conclusion)
+    \vfill
+    \Large
+        Submitted in part fulfilment of the requirements for \\
+        the degree of MSc in Medical Statistics \\
+    \vspace{0.8cm}
+    \large
+        September 2017 \\
+        
+  \end{center}
+  
+\end{titlepage}
