@@ -1,0 +1,419 @@
+\documentclass[letterpaper]{article}
+
+%%%%%%%% NEW COMMANDS  %%%%%%%%
+\newcommand{\name}{Steven Tate}        % NAME FOR TITLE & HEADER
+\newcommand{\Indent}{\hspace{0.30cm}}  % Custom Indentation spacing for document
+\newcommand{\newlineb}                 % Bulletted Text Below Entries
+    {
+      \newline 
+      \small                           % Comment out for normal size subtext 
+      \hspace{0.30cm}                  % will have to change size of education
+      $\bullet$                        % subtext manually
+      }
+\newcommand{\newlinea}{\kern-0.5ex , \ } % Choose if you want location on sameline
+%\newcommand{\newlinea}{\newline}       % Or line below(Long vs. wide :)          
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%% FORMATTING      %%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{palatino}                  % Sets default document font
+% $\bullet$ used over \textbullet because of better spacing
+
+%%%%%%%% PAGE SIZE     %%%%%%%%
+\usepackage{geometry}                  % For Page Geometry
+\geometry{
+  left=0.8in,
+  right=0.8in,
+  top=0.8in,
+  bottom=0.8in,
+  head=0.5in,
+  foot=0.0in
+}
+
+%%%%%%%% HYPERLINK SETUP %%%%%%
+\usepackage{hyperref}                 % Allows for links
+\usepackage[usenames,dvipsnames]{xcolor} % Allows navy blue for links with `Blue'
+\hypersetup{
+  colorlinks = true,
+  urlcolor = blue,                    % Blue for darker link color
+  linkcolor = black,                  % Internal links
+  pdfauthor = {\name},
+  pdfkeywords = {},
+  pdftitle = {\name: Curriculum Vitae},
+  pdfsubject = {Curriculum Vitae},
+  pdfpagemode = UseNone
+}
+
+%%%%%%% HEADER %%%%%%%%%%%%%%%
+\usepackage{fancyhdr}           % Package for header
+\usepackage{lastpage}           % Allows LastPage Command Below
+\pagestyle{fancy}               % Sets up Fancy Header 
+\fancyhf{}                      % Takes default page numbers off
+\thispagestyle{empty}           % Takes header and footer off 1st page
+\rhead{\name\ $\bullet$ Curriculum Vitae}
+\rfoot{\thepage\ of \pageref{LastPage}}
+\renewcommand\headrulewidth{0pt}% Line below header set to 0
+
+%%%%%%%%%% SECTION HEADINGS %%
+\usepackage{sectsty}            % Allows changing of the section fonts/shapes
+\sectionfont{\scshape}          % Makes section heads 'Small Caps'
+
+%%%%%%%%%% TABLE FORMATING %%%
+\usepackage{array,ragged2e}                               % For alignment of columns
+\renewcommand{\arraystretch}{1.0}                         % Sets horizontal space everywhere
+{\setlength{\extrarowheight}{5pt}                         % More spacing between table rows
+\newcolumntype{R}[1]{>{\RaggedLeft\arraybackslash}p{#1}}  % New column type that aligns right
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}} % New column type that aligns left
+\usepackage{longtable}                                    % Change tabular to longtable, and put
+                                                          % \pagebreak for sections that span pages
+
+%%%%%%%%%%%%% ITEMIZE FORMAT %%%%%%%%%%%
+% New environment used for pubs
+\renewenvironment{itemize}{
+  \begin{list}{}{
+    \setlength{\leftmargin}{0.3cm}
+    \setlength{\rightmargin}{0.3cm}
+    \setlength{\parskip}{0cm}
+  }
+}{
+  \end{list}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEGIN !!!!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Heading
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+{\bfseries\huge\scshape\name} \\ 
+%Permanent Address:
+Address Here
+  $\bullet$ (999) 999-9999 
+  $\bullet$ email@email.com
+%  $\bullet$ @twitter
+  $\bullet$ \href{website}{google.com}
+\\
+% Local Address:
+% Adress Here
+%  $\bullet$ +44 9999 999999
+%  $\bullet$ email@email.com
+%\\
+\end{center}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Education \hrulefill}
+\begin{tabular}{L{1.0cm} L{13.0cm} R{2.0cm}}
+
+\textbf{MD} 
+  & \textbf{Doctor of Medicine}
+     \newlinea Pritzker School of Medicine, University of Chicago
+%    \newline \Indent {\small Clinical Year Grades}
+%    \newline \Indent\Indent {\small \textit{Honors:} }
+%    \newline \Indent\Indent {\small \textit{High pass:} }
+  & 2013--2018 \\
+
+\textbf{MSc} 
+  & \textbf{Medical Statistics}
+     \newlinea London School of Hygiene and Tropical Medicine
+%    \newline \hspace{0.3cm}{\small Project: ``Statistical approaches to analysing serological outcomes in malaria elimination settings"}
+  & 2016--2017 \\
+
+\textbf{BS} 
+  & \textbf{Microbiology \& Immunology}, \textit{Magna Cum Laude}
+    \newlinea University of California Irvine
+%    \newline \hspace{0.3cm}{\small GPA:}
+  & 2008--2012 \\
+
+\end{tabular}
+
+%%%%%%%%%%% RELEVENT COURSEWORK %%%%%%%%%%%%%%%
+
+%\subsection*{Relevent Coursework}
+
+%\subsubsection*{Pritzker School of Medicine}
+%Social Context of Medicine \& The Healthcare System, Healthcare Disparities: Equity \& Advocacy, Medical Intensive Care Unit, Infectious Disease Consult Service
+
+%\subsubsection*{London School of Hygiene \& Tropical Medicine}
+%Probability, Statistical Inference, Robust Statistical Methods, Regression, Generalized Linear Models, Introduction to Bayesian Statistics, Survival Analysis, Statistical Methods in Epidemiology, Analysis of Hierarchical Models \& Other Dependent Data, Advanced Statistical Modeling
+
+%\subsubsection*{UC Irvine}
+%Infectious Disease Modeling, Evolution of Infectious Disease, Calculus
+
+
+%%%%%%%%%%%%%% RESEARCH INTERESTS %%%%%%%%%%%%%
+
+%\subsection*{Research Interests}
+
+%Epidemiology, 
+%Population Health, 
+%Antibiotic Stewardship, 
+%Modeling of Infectious Diseases, 
+%Quality and Safety in Healthcare Delivery, 
+%Evidence Based Medicine, 
+%Predictive Analytics in Medicine, 
+%and Big Data in Medicine.
+
+%%%%%%%%%%%%%% TEST SCORES %%%%%%%%%%%%%
+
+%\subsection*{Test Scores}
+%\begin{tabular}{p{6.75 cm}p{7.75cm}p{2.0 cm}}
+
+%USMLE Step 2CK & XXX (XX\textsuperscript{th} Percentile) & 2016 \\
+%USMLE Step 2CS & Pass & 2016 \\
+%Medicine Shelf Exam & XX\textsuperscript{th} Percentile & 2015 \\
+%USMLE Step Step 1 &  XXX (XX\textsuperscript{th} Percentile) & 2015 \\
+%MCAT & XXX (XX\textsuperscript{th} Percentile) & 2011
+
+%\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Honors & Awards
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Honors \& Awards \hrulefill} 
+\begin{tabular}{L{14.5 cm}R{2.0 cm}}
+
+%Pritzker Tuition Scholarship 
+%  {\newlineb \$XXX scholarship over 4 years.}
+%& 2013--2018\\
+
+UC Irvine Chancellor's Award of Distinction
+%  {\newlineb Awarded to five graduating seniors in the School of Biological Sciences with an outstanding record of involvement in, and contribution to, the UCI campus community.}
+& 2012\\
+  
+UC Irvine School of Biological Sciences Laurence J. Mehlman Scholarship 
+% {\newlineb Awarded to one outstanding undergraduate in the School of Biological Sciences.}
+& 2012\\
+
+Phi Beta Kappa, Junior Induction (top 1\% of juniors by GPA) & 2011\\
+
+Undergraduate Research Opportunities Program Fellow & 2010--2012\\
+
+%Deans List (All Quarters) & 2008--2012 \\
+
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PUBLICATIONS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Research Experience \hrulefill}
+\subsection*{Peer Reviewed Publications}
+
+\begin{itemize}
+\item {\bf Tate, S.}, Namkung, J.J., \& Noymer, A. (2016). Did the 1918 influenza cause the twentieth century cardiovascular mortality epidemic in the United States? PeerJ, 4, e2531. (\href{https://doi.org/10.7717/peerj.2531}{link})
+\end{itemize}
+
+\subsection*{Published Abstracts}
+
+\begin{itemize}
+\item Hirai, T., Jones, D., {\bf Tate, S.}, Dryer, K., Santiago, L., Edelson, D., … Blair, J. (2016). TCT-790 Cardiac Arrest Triage score best predicts mortality after intervention in patients with massive and submassive pulmonary embolism. Journal of the American College of Cardiology, 68(18), B319–B320. (\href{https://doi.org/10.1016/j.jacc.2016.09.821}{link})
+\end{itemize}
+
+\subsection*{Posters \& Presentations}
+
+\begin{itemize}
+
+\item {\bf Tate, S.}, Stephenson, S., Shah, N., Pettit, N., Pisano, J. (2016). Rehospitalization of patients discharged on outpatient parenteral antibiotic therapy with vancomycin. Quality \& Safety Symposium, University of Chicago Medicine, Chicago, IL. (\href{https://dl.dropboxusercontent.com/u/73608618/shared/srp.pdf}{poster})
+
+\item Noymer, A., {\bf Tate, S.} (2015). Origins of the Cardiovascular Mortality Epidemic in the United States, 1920--90. Presented by Dr. Noymer at the annual meeting of the Population Association of America, Session 35, San Diego, CA. (\href{http://paa2015.princeton.edu/abstracts/151138}{link})
+
+\item {\bf Tate, S.} (2014). Role of miR-130a in AV node function and molecular structure. Summer Research Forum, Pritzker School of Medicine, Chicago, IL. (\href{https://dl.dropboxusercontent.com/u/73608618/shared/opat.pdf}{presentation})
+
+\end{itemize}
+
+\subsection*{Additional Experience}
+\begin{tabular}{L{14.5 cm}R{2.0 cm}}
+
+\textit{Statistical approaches to analysing serological outcomes in malaria elimination settings}
+  \newline  with Nuno Supolveda PhD 
+  \newline  London School of Hygiene \& Tropical Medicine
+%  {\newlineb Test}
+%  {\newlineb Test2}
+& 2017 \\
+
+%\textit{Readmission in patients discharged on outpatient parenteral antibiotic therapy (OPAT)}
+%  \newline with Jennifer Pisano MD
+%  \newline Healthcare Delivery Science Track, Scholarship \& Discovery, Pritzker School of Medicine
+%& 2014--2016 \\
+
+%\textit{The role of miR-130a in AV node function and molecular structure}
+%  \newline with Gene Kim MD
+%  \newline Summer Research Program, Pritzker School of Medicine
+%& 2014 \\
+
+\textit{Genetic epidemiology of breast and ovarian cancer}
+  \newline with Hoda Anton-Culver PhD \& Argyrios Ziogas PhD
+  \newline Department of Epidemiology, University of California Irvine School of Medicine
+  {\newlineb Provided data analysis and SAS programming for genetic epidemiology projects }
+  {\newlineb Presented projects at undergraduate research symposium in 2011 and 2012}
+& 2009--2012 
+
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TEACHING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Teaching Experience \hrulefill}
+\begin{tabular}{L{14.5 cm}R{2.0 cm}}
+
+\textbf{MCAT Biology \& Chemistry Instructor}
+  \newlinea The Berkeley Review, Irvine CA 
+& 2012--2013 \\
+  
+\textbf{Instructor} for seminar titled ``Globalization \& Infectious Disease'' 
+  \newlinea UTeach, UC Irvine
+  {\newlineb Designed and taught seminar with faculty mentor Andrew Noymer PhD}
+& 2010--2012 \\
+  
+\textbf{Chemistry \& Biology Tutor}
+  \newlinea Learning and Academic Resource Center, UC Irvine
+  {\newlineb Led three small group tutoring sessions of 8-10 students each quarter}
+%  {\newlineb Facilitated discussion, encouraged critical thinking and problem solving}
+%  {\newlineb Mentored new tutors on instructional techniques}
+%  {\newlineb Obtained CRLA Master Tutor certification}
+%  \newline Courses Tutored:
+%  {\newlineb Biochemistry, Molecular Biology, Genetics}
+%  {\newlineb General Chemistry, Organic Chemistry}
+& 2009--2012 \\
+
+%\textbf{Group Tutor}
+%  \newline Department of Chemistry, University of California Irvine
+%& 2010 
+
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COMMUNITY SERVICE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Community Service \hrulefill}
+\begin{tabular}{L{14.5 cm}R{2.0 cm}}
+
+\textbf{Habitat for Humanity Volunter}
+  \newlinea Tutwiler, MS, with the Pritzker JOURNEES student group
+& 2014, 2015\\
+  
+\textbf{SERVE* Fellow}{\small\ (*Service, Education Reflection and Volunteerism)}
+  \newlinea Pritzker School of Medicine
+  {\newlineb Helped implement electronic medical records use improvement project at student run clinic }
+& 2014--2015 \\
+
+\textbf{Electronic Medical Records Coordinator}
+  \newlinea Community Health Clinic, Pritzker School of Medicine
+  {\newlineb Ensured proper training and use of electronic medical records system at student-run free clinic}
+  {\newlineb Served as lab volunteer handling phebotomy and sampling processing }
+& 2013--2014 \\
+
+\textbf{Junior Liason to the Administration \& Floor Manager}
+  \newline UC Irvine Outreach Clinic (student-run free clinic), UC Irvine School of Medicine
+  {\newlineb Responsible for administrative operations and weekly management}
+  {\newlineb Implemented floor manager, referrals, intake, and outtake systems}
+%  {\newlineb Trained and supervised all non-medical volunteers}
+  {\newlineb Represented governing board to clinic partners and school administration}
+& 2011--2013 \\
+
+\textbf{Volunteer Coordinator}
+  \newlinea UC Irvine Outreach Clinic, UC Irvine School of Medicine
+  {\newlineb Supervised, scheduled, and coordinated team of 25 undergraduate volunteers}
+%  {\newlineb Assist with overall direction and planning of clinic by contributing to clinic governing board}
+& 2010--2012 \\
+
+\textbf{Outtake Volunteer}
+  \newlinea UC Irvine Outreach Clinic, UC Irvine School of Medicine
+  {\newlineb Oversaw patient scheduling and referral process}
+& 2009--2011 \\
+  
+%\textbf{Intern}
+%  \newlinea China-California Heart Watch, Yunnan, China
+%  {\newlineb Assisted with epidemiologic data collection}
+%  {\newlineb Assisted in screening children for heart defects}
+%& Dec. 2009 \\
+
+%\textbf{Volunteer}
+%  \newlinea Discovery Science Center, Santa Ana CA
+%  {\newlineb Assist with educational activities including demonstrations and special events}
+%& 2011--2012
+
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INSTITUTIONAL SERVICE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Institutional Service \hrulefill}
+\begin{tabular}{L{14.5 cm}R{2.0 cm}}
+
+\textbf{Group Leader} for USMLE Guidance \& Support Group
+  \newlinea Pritzker School of Medicine
+& 2015 \\
+  
+\textbf{Admissions Interviewer}
+  \newlinea Pritzker School of Medicine
+& 2014--2015 \\
+  
+\textbf{\textit{Life at Pritzker} Co-Editor} (\href{https://dl.dropboxusercontent.com/u/73608618/shared/LifeatPritzker2014.pdf}{link})
+  \newlinea Orientation Committee, Pritzker School of Medicine
+& 2014 \\
+
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% WORK EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Work Experience \hrulefill}
+\begin{tabular}{L{14.5 cm}R{2.0 cm}}
+
+\textbf{Lead Tutor Advisor}
+  \newlinea University of California, Irvine
+  {\newlineb Operated tutoring program with 50 tutors and \$300,000 budget}
+& 2012--2013 \\
+
+%\textbf{Resident Advisor}
+%  \newlinea Mesa Court Housing, UC Irvine
+%  {\newlineb Planned, implemented, and evaluated weekly educational and community building programs}
+%  {\newlineb Supported safety \& security in an80 resident freshman dorm and 1,300 resident community}
+%  {\newlineb Facilitated ``U Can Do It" retreat focused on adjusting to college}
+%& 2010--2011 \\
+ 
+%\textbf{Attractions Cast Member}, Finding Nemo Submarine Voyage
+%  \newlinea Disneyland, Anaheim CA
+%& 2008--2009 \\
+
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OTHER EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Other Skills \& Interests \hrulefill}
+
+\subsection*{Technical skills:}
+\hspace{0.25cm} Stata, SAS, R (RStudio, RMarkdown, Tidyverse), \LaTeX, OpenBUGS 
+
+\subsection*{Interest:}
+\hspace{0.25cm} Baking (particularly bread), biking, traveling, podcasts
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FOOTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{center}
+% \begin{small}
+%  References available upon request. \\
+%  Last updated: \today
+%  \end{small}
+%\end{center}
+
+
+\end{document}
